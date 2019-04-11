@@ -8,6 +8,7 @@ import Box from "./box"
 
 const mapStateToProps = state => ({
     board: state.board,
+    gameContext: state.gameContext
 });
 
 
@@ -27,7 +28,7 @@ class Board extends Component {
 
         const boardLayout = (
             <Fade  {...{timeout: {enter: 1000, exit: 0} }}
-                   in
+                   in={this.props.gameContext.usersTeam ? true : false}
                    mountOnEnter
                    unmountOnExit
             >
