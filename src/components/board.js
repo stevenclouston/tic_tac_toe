@@ -20,8 +20,6 @@ class Board extends Component {
     render() {
         const { board } = this.props
 
-        debugger
-
         const boxes = board.map((box, index)  =>
             <Box id={index} />
         )

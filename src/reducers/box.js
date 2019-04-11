@@ -7,7 +7,7 @@ const updateBox = (state, action) => {
 
     return {
         ...state,
-        [id]: {...state.boxes[id], value}
+        [id]: {...state[id], value}
     }
 }
 
@@ -17,8 +17,6 @@ const createBox = (state, action) => {
     const newBox = {
         value: null
     }
-
-    debugger
 
     return {
         ...state,
