@@ -7,3 +7,26 @@
     margin: 10px;
     border-radius: 10px;
 }
+
+.winningBox {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    border: solid #233237 4px;
+    position: relative;
+    background-color: #233237;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.loosingBox {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    border: solid #233237 4px;
+    position: relative;
+    background-color: #233237;
+    margin: 10px;
+    border-radius: 10px;
+    opacity: 0.4;
+}
