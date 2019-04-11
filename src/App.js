@@ -4,6 +4,7 @@ import Board from "./components/board";
 import Title from "./components/title";
 import StartPage from "./components/startPage";
 import GameStatus from "./components/gameStatus";
+import ResetGame from "./components/resetGame";
 
 class App extends Component {
   render() {
@@ -16,6 +17,9 @@ class App extends Component {
             <Title/>
             <StartPage/>
             <Board/>
+            <div className="tryAgain">
+                <ResetGame/>
+            </div>
         </header>
       </div>
     );
