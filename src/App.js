@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './assets/css/App.css';
+import './assets/css/status.css';
 import Board from "./components/board";
 import Title from "./components/title";
 import StartPage from "./components/startPage";
