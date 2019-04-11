@@ -1,0 +1,15 @@
+.xTeam {
+    position: absolute;
+    top: 50px;
+    left: 24px;
+    color: #984B43;
+    font-size: 82px;
+}
+
+.oTeam{
+    position: absolute;
+    top: 50px;
+    left: 22px;
+    color: #233237;
+    font-size: 78px;
+}

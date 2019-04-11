@@ -8,8 +8,8 @@
   pointer-events: none;
 }
 
-.App-header {
-  background-color: #282c34;
+.App-body {
+  background-color: #EAC67A;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
