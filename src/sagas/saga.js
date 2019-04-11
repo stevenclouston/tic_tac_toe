@@ -2,6 +2,7 @@ import { all, takeEvery, put, select } from 'redux-saga/effects'
 import {UPDATE_BOX, UPDATE_CURRENT_TURN, UPDATE_USERS_TEAM} from "../constants/actionTypes";
 import {players} from "../constants/players";
 import {getBoxes, getGameContext} from "./selectors";
+import {calculateNextMove} from "./calculateNextTurnSaga";
 
 function* randomCurrentTurn() {
 
@@ -26,37 +27,18 @@ export function* updateBoxAsync(action) {
 
     yield put({type: UPDATE_BOX, id: action.id, value: action.value})
 
-    // yield put({type: UPDATE_CURRENT_TURN, currentTurn: players.COMPUTER})
-    //
-    // gameContext = yield select(getGameContext)
-    //
-    // if (gameContext.currentTurn === players.COMPUTER){
-    //
-    //     const nextPosition = yield calculateNextMove()
-    //
-    //     const winner = yield findWinner()
-    //
-    //     if (winner){
-    //
-    //         yield delay(600)
-    //         yield put({type: UPDATE_GAME_RESULT, gameResult: winner})
-    //
-    //         return
-    //     }
-    //
-    //     const draw = yield CheckDraw()
-    //
-    //     if (draw){
-    //         yield delay(600)
-    //         yield put({type: UPDATE_GAME_RESULT, gameResult: draw})
-    //
-    //         return
-    //     }
-    //
-    //     return
-    // }
-    //
-    // yield put({type: UPDATE_CURRENT_TURN, currentTurn: players.USER})
+    yield put({type: UPDATE_CURRENT_TURN, currentTurn: players.COMPUTER})
+
+    gameContext = yield select(getGameContext)
+
+    if (gameContext.currentTurn === players.COMPUTER){
+
+        const nextPosition = yield calculateNextMove()
+
+        return
+    }
+
+    yield put({type: UPDATE_CURRENT_TURN, currentTurn: players.USER})
 }
 
 export function* updateUsersTeamAsync(action) {
