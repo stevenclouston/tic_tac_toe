@@ -1,5 +1,4 @@
 const BoxSelector = (state, ownProps) => {
-    debugger
     if (state.box) {
         return state.box[ownProps.id]
     }
