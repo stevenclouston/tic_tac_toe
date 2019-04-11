@@ -1,8 +1,11 @@
 import { all, takeEvery, put, select } from 'redux-saga/effects'
-import {UPDATE_BOX, UPDATE_CURRENT_TURN, UPDATE_USERS_TEAM} from "../constants/actionTypes";
+import {UPDATE_BOX, UPDATE_CURRENT_TURN, UPDATE_GAME_RESULT, UPDATE_USERS_TEAM} from "../constants/actionTypes";
 import {players} from "../constants/players";
 import {getBoxes, getGameContext} from "./selectors";
 import {calculateNextMove} from "./calculateNextTurnSaga";
+import {CheckDraw, findWinner} from "./results";
+
+const delay = (ms) => new Promise(res => setTimeout(res, ms))
 
 function* randomCurrentTurn() {
 
@@ -34,6 +37,25 @@ export function* updateBoxAsync(action) {
     if (gameContext.currentTurn === players.COMPUTER){
 
         const nextPosition = yield calculateNextMove()
+
+        const winner = yield findWinner()
+
+        if (winner){
+
+            yield delay(600)
+            yield put({type: UPDATE_GAME_RESULT, gameResult: winner})
+
+            return
+        }
+
+        const draw = yield CheckDraw()
+
+        if (draw){
+            yield delay(600)
+            yield put({type: UPDATE_GAME_RESULT, gameResult: draw})
+
+            return
+        }
 
         return
     }

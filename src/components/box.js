@@ -46,20 +46,57 @@ class Box extends Component {
         const {box} = this.props
 
         const fadeTime = () => {
-            return 1500
+            if (this.props.box && this.props.box.value === this.props.gameContext.computersTeam){
+                return 1500
+            } else {
+                return 200
+            }
+        }
+
+        const boxStatus = () => {
+            if (this.props.winningCombination) {
+                if (this.props.box && this.props.winningCombination.includes(this.props.id + 1)){
+                    return "winner"
+                } else {
+                    return "looser"
+                }
+            }
+        }
+
+        const boxClass = () => {
+            if (this.props.draw){
+                return "loosingBox"
+            }
+            if (boxStatus() === "winner") {
+                return "winningBox"
+            }
+
+            if (boxStatus() === "looser") {
+                return "loosingBox"
+            }
+
+            return "box"
+        }
+
+        const oTextClass = () => {
+            if (this.props.draw || this.props.winningCombination){
+                return "oTeamResult"
+            }
+
+            return "oTeam"
         }
 
         return (
             <div
-                className={"box"}
+                className={boxClass()}
                 onClick={this.onClick}
             >
                 <Fade  {...{timeout: {enter: fadeTime(), exit: 1000} }}
-                       in={true}
+                       in={box && box.value ? true : false}
                        mountOnEnter
                        unmountOnExit
                 >
-                    <div className={(box && box.value === teams.X) ? "xTeam" : "oTeam"}>
+                    <div className={(box && box.value === teams.X) ? "xTeam" : oTextClass()}>
                         {box ? box.value : null}
                     </div>
                 </Fade>

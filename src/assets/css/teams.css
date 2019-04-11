@@ -13,3 +13,11 @@
     color: #233237;
     font-size: 78px;
 }
+
+.oTeamResult{
+    position: absolute;
+    top: 50px;
+    left: 22px;
+    color: white;
+    font-size: 78px;
+}
