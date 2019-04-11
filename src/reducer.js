@@ -1,10 +1,12 @@
 import board from "./reducers/board";
 import box from "./reducers/box";
 import { combineReducers } from "redux";
+import gameContext from "./reducers/gameContext";
 
 const appReducer = combineReducers({
     board,
-    box
+    box,
+    gameContext
 });
 
 const rootReducer = (state, action) => {
