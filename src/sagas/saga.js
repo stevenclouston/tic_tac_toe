@@ -73,6 +73,11 @@ export function* updateUsersTeamAsync(action) {
 
     yield put({type: UPDATE_CURRENT_TURN, currentTurn: currentTurn})
 
+    yield delay(200)
+
+    if (currentTurn === players.COMPUTER) {
+        yield calculateNextMove()
+    }
 }
 
 function* boxAlreadyAllocated(action) {
