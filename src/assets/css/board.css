@@ -1,0 +1,10 @@
+.container {
+    text-align: center;
+}
+
+.board {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 400px;
+    line-height: 0px;
+}
