@@ -1,6 +1,10 @@
+import board from "./reducers/board";
+import box from "./reducers/box";
 import { combineReducers } from "redux";
 
 const appReducer = combineReducers({
+    board,
+    box
 });
 
 const rootReducer = (state, action) => {
