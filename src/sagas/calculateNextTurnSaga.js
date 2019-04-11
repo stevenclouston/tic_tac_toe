@@ -67,7 +67,7 @@ function* CheckDraw() {
     }
 }
 
-function* threeInARow(boxes, playerSymbol) {
+export function* threeInARow(boxes, playerSymbol) {
 
     let playersBoxes = yield currentPlayersBoxes(boxes, playerSymbol);
 
@@ -123,7 +123,7 @@ function* emptySide(boxes) {
     }
 }
 
-function* currentPlayersBoxes(boxes, playerSymbol) {
+export function* currentPlayersBoxes(boxes, playerSymbol) {
 
     let playersBoxes = []
 
