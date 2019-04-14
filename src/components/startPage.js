@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../assets/css/board.css";
-import connect from "react-redux/es/connect/connect";
+import { connect } from "react-redux";
 import Box from "./box";
 import { players } from "../constants/players";
 import { teams } from "../constants/teams";

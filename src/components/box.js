@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../assets/css/board.css";
 import "../assets/css/box.css";
 import "../assets/css/teams.css";
-import connect from "react-redux/es/connect/connect";
+import { connect } from "react-redux";
 import Fade from "@material-ui/core/Fade";
 import {
   CREATE_BOARD,
