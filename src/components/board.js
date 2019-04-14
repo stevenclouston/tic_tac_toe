@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../assets/css/board.css";
-import connect from "react-redux/es/connect/connect";
+import { connect } from "react-redux";
 import { players } from "../constants/players";
 import { teams } from "../constants/teams";
 import Fade from "@material-ui/core/Fade";
@@ -10,7 +10,7 @@ export class Board extends Component {
   render() {
     const { board, gameContext } = this.props;
 
-    const boxes = board.map((box, index) => <Box id={index} />);
+    const boxes = board.map((box, index) => <Box id={index} key={index} />);
 
     const boardLayout = (
       <Fade
