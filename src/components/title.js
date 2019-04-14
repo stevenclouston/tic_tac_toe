@@ -3,28 +3,28 @@ import '../assets/css/board.css';
 import connect from "react-redux/es/connect/connect";
 import Fade from "@material-ui/core/Fade";
 
-const mapStateToProps = (state, ownProps) => ({
-    gameContext: state.gameContext
-});
-
 class Title extends Component {
-    constructor() {
-        super();
-    }
 
     render() {
+        const { gameContext } = this.props
+
         const title = (
-            <Fade  {...{timeout: {enter: 100, exit: 0} }} in={!this.props.gameContext.usersTeam ? true : false} mountOnEnter unmountOnExit>
+            <Fade  {...{timeout: {enter: 100, exit: 0} }}
+                   in={!gameContext.usersTeam}
+                   mountOnEnter
+                   unmountOnExit>
                 <h1>
                     Tic Tac Toe
                 </h1>
             </Fade>
         )
 
-        return (
-            title
-        )
+        return title
     }
 }
+
+const mapStateToProps = (state, ownProps) => ({
+    gameContext: state.gameContext
+});
 
 export default connect(mapStateToProps, null)(Title);

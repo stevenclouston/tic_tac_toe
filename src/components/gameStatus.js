@@ -3,16 +3,7 @@ import '../assets/css/board.css';
 import connect from "react-redux/es/connect/connect";
 import Fade from "@material-ui/core/Fade";
 
-const mapStateToProps = (state, ownProps) => ({
-    gameContext: state.gameContext,
-    winner: state.gameContext.winner,
-    draw: state.gameContext.draw,
-});
-
 class GameStatus extends Component {
-    constructor() {
-        super();
-    }
 
     render() {
         const status = () => {
@@ -52,5 +43,11 @@ class GameStatus extends Component {
         )
     }
 }
+
+const mapStateToProps = (state, ownProps) => ({
+    gameContext: state.gameContext,
+    winner: state.gameContext.winner,
+    draw: state.gameContext.draw,
+});
 
 export default connect(mapStateToProps, null)(GameStatus);

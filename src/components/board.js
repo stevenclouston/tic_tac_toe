@@ -6,19 +6,9 @@ import {teams} from "../constants/teams";
 import Fade from "@material-ui/core/Fade";
 import Box from "./box"
 
-const mapStateToProps = state => ({
-    board: state.board,
-    gameContext: state.gameContext
-});
-
-
-const mapDispatchToProps = dispatch => ({
-
-});
-
-class Board extends Component {
+export class Board extends Component {
     render() {
-        const { board } = this.props
+        const { board, gameContext } = this.props
 
         const boxes = board.map((box, index)  =>
             <Box id={index} />
@@ -26,7 +16,7 @@ class Board extends Component {
 
         const boardLayout = (
             <Fade  {...{timeout: {enter: 1000, exit: 0} }}
-                   in={this.props.gameContext.usersTeam ? true : false}
+                   in={gameContext.usersTeam}
                    mountOnEnter
                    unmountOnExit
             >
@@ -44,4 +34,9 @@ class Board extends Component {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Board);
+const mapStateToProps = state => ({
+    board: state.board,
+    gameContext: state.gameContext
+});
+
+export default connect(mapStateToProps, null)(Board);
