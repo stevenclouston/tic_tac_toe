@@ -1,5 +1,11 @@
 import { all, takeEvery, put, select } from 'redux-saga/effects'
-import {UPDATE_BOX, UPDATE_CURRENT_TURN, UPDATE_GAME_RESULT, UPDATE_USERS_TEAM} from "../constants/actionTypes";
+import {
+    UPDATE_BOX,
+    UPDATE_BOX_ASYNC,
+    UPDATE_CURRENT_TURN,
+    UPDATE_GAME_RESULT,
+    UPDATE_USERS_TEAM, UPDATE_USERS_TEAM_ASYNC
+} from "../constants/actionTypes";
 import {players} from "../constants/players";
 import {getBoxes, getGameContext} from "./selectors";
 import {calculateNextMove} from "./calculateNextTurnSaga";
@@ -94,12 +100,12 @@ function* boxAlreadyAllocated(action) {
 
 export function* watchUpdateUsersTeamAsync() {
 
-    yield takeEvery('UPDATE_USERS_TEAM_ASYNC', updateUsersTeamAsync)
+    yield takeEvery(UPDATE_USERS_TEAM_ASYNC, updateUsersTeamAsync)
 }
 
 export function* watchUpdateBoxAsync() {
 
-    yield takeEvery('UPDATE_BOX_ASYNC', updateBoxAsync)
+    yield takeEvery(UPDATE_BOX_ASYNC, updateBoxAsync)
 }
 
 export default function* rootSaga() {

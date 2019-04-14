@@ -6,25 +6,9 @@ import Button from "@material-ui/core/Button";
 import {teams} from "../constants/teams";
 import {RESET_GAME} from "../constants/actionTypes";
 
-const mapStateToProps = (state, ownProps) => ({
-    gameContext: state.gameContext,
-    winner: state.gameContext.winner,
-    draw: state.gameContext.draw
-});
-
-const mapDispatchToProps = dispatch => ({
-    resetGame: () => {
-        dispatch({type: RESET_GAME})
-    }
-});
-
 class ResetGame extends Component {
-    constructor() {
-        super();
-        this.resetButtonClick = this.resetButtonClick.bind(this)
-    }
 
-    resetButtonClick() {
+    resetButtonClick = () => {
         this.props.resetGame()
     }
 
@@ -56,5 +40,17 @@ class ResetGame extends Component {
         )
     }
 }
+
+const mapStateToProps = (state, ownProps) => ({
+    gameContext: state.gameContext,
+    winner: state.gameContext.winner,
+    draw: state.gameContext.draw
+});
+
+const mapDispatchToProps = dispatch => ({
+    resetGame: () => {
+        dispatch({type: RESET_GAME})
+    }
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(ResetGame);

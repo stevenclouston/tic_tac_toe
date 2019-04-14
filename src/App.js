@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import './assets/css/App.css';
-import './assets/css/status.css';
+import React, { Component } from "react";
+import "./assets/css/App.css";
+import "./assets/css/status.css";
 import Board from "./components/board";
 import Title from "./components/title";
 import StartPage from "./components/startPage";
@@ -12,15 +12,15 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-body">
-            <div className="status">
-                <GameStatus/>
-            </div>
-            <Title/>
-            <StartPage/>
-            <Board/>
-            <div className="tryAgain">
-                <ResetGame/>
-            </div>
+          <div className="status">
+            <GameStatus />
+          </div>
+          <Title />
+          <StartPage />
+          <Board />
+          <div className="tryAgain">
+            <ResetGame />
+          </div>
         </header>
       </div>
     );
