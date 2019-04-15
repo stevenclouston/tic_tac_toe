@@ -1,4 +1,4 @@
 export const teams = {
-    X: 'X',
-    O: 'O',
-}
+  X: 'X',
+  O: 'O'
+};

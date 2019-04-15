@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import "./assets/css/App.css";
-import "./assets/css/status.css";
-import Board from "./components/board";
-import Title from "./components/title";
-import StartPage from "./components/startPage";
-import GameStatus from "./components/gameStatus";
-import ResetGame from "./components/resetGame";
+import React, { Component } from 'react';
+import './assets/css/App.css';
+import './assets/css/status.css';
+import Board from './components/board';
+import Title from './components/title';
+import StartPage from './components/startPage';
+import GameStatus from './components/gameStatus';
+import ResetGame from './components/resetGame';
 
 class App extends Component {
   render() {

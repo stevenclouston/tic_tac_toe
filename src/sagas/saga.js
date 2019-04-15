@@ -1,4 +1,4 @@
-import { all, takeEvery, put, select } from "redux-saga/effects";
+import { all, takeEvery, put, select } from 'redux-saga/effects';
 import {
   UPDATE_BOX,
   UPDATE_BOX_ASYNC,
@@ -6,11 +6,11 @@ import {
   UPDATE_GAME_RESULT,
   UPDATE_USERS_TEAM,
   UPDATE_USERS_TEAM_ASYNC
-} from "../constants/actionTypes";
-import { players } from "../constants/players";
-import { getBoxes, getGameContext } from "./selectors";
-import { calculateNextMove } from "./calculateNextTurnSaga";
-import { CheckDraw, findWinner } from "./results";
+} from '../constants/actionTypes';
+import { players } from '../constants/players';
+import { getBoxes, getGameContext } from './selectors';
+import { calculateNextMove } from './calculateNextTurnSaga';
+import { CheckDraw, findWinner } from './results';
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
 

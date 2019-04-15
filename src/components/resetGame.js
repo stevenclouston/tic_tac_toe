@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import "../assets/css/board.css";
-import { connect } from "react-redux";
-import Fade from "@material-ui/core/Fade";
-import Button from "@material-ui/core/Button";
-import { teams } from "../constants/teams";
-import { RESET_GAME } from "../constants/actionTypes";
+import React, { Component } from 'react';
+import '../assets/css/board.css';
+import { connect } from 'react-redux';
+import Fade from '@material-ui/core/Fade';
+import Button from '@material-ui/core/Button';
+import { teams } from '../constants/teams';
+import { RESET_GAME } from '../constants/actionTypes';
 
 class ResetGame extends Component {
   resetButtonClick = () => {
@@ -27,12 +27,12 @@ class ResetGame extends Component {
         mountOnEnter
         unmountOnExit
       >
-        <div style={{ position: "relative" }}>
-          <div style={{ position: "relative", width: "100%" }}>
+        <div style={{ position: 'relative' }}>
+          <div style={{ position: 'relative', width: '100%' }}>
             <Button
               variant="outlined"
               component="span"
-              className={"teamText"}
+              className={'teamText'}
               onClick={this.resetButtonClick}
               style={{ margin: 30 }}
             >

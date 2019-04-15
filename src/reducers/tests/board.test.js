@@ -1,7 +1,7 @@
-import reducer from "../board";
+import reducer from '../board';
 
-describe("actions", () => {
-  it("should initialise", () => {
+describe('actions', () => {
+  it('should initialise', () => {
     const action = {
       type: undefined
     };
