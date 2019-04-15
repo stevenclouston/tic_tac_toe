@@ -3,12 +3,9 @@ import '../assets/css/board.css';
 import '../assets/css/box.css';
 import '../assets/css/teams.css';
 import { connect } from 'react-redux';
+import classNames from 'classnames';
 import Fade from '@material-ui/core/Fade';
-import {
-  CREATE_BOARD,
-  CREATE_BOX,
-  UPDATE_BOX_ASYNC
-} from '../constants/actionTypes';
+import { CREATE_BOX, UPDATE_BOX_ASYNC } from '../constants/actionTypes';
 import { teams } from '../constants/teams';
 import BoxSelector from '../state_selectors/box';
 
@@ -24,33 +21,38 @@ class Box extends Component {
     this.props.updateBox(id, gameContext.usersTeam);
   };
 
-  boxStatus = () => {
+  isWinningBox = () => {
     const { winningCombination, id, box } = this.props;
 
-    if (winningCombination) {
-      if (box && winningCombination.includes(id + 1)) {
-        return 'winner';
-      }
-
-      return 'loser';
+    if (winningCombination && box && winningCombination.includes(id + 1)) {
+      return true;
     }
+
+    return false;
+  };
+
+  isLosingBox = () => {
+    const { winningCombination, id, box } = this.props;
+
+    if (winningCombination && box && !winningCombination.includes(id + 1)) {
+      return true;
+    }
+
+    return false;
   };
 
   boxClass = () => {
     const { draw } = this.props;
 
-    if (draw) {
-      return 'losingBox';
-    }
-    if (this.boxStatus() === 'winner') {
-      return 'winningBox';
-    }
+    const winningBox = this.isWinningBox();
+    const losingBox = this.isLosingBox();
 
-    if (this.boxStatus() === 'loser') {
-      return 'losingBox';
-    }
-
-    return 'box';
+    return classNames({
+      winningBox: winningBox,
+      losingBox: losingBox,
+      drawBox: draw,
+      box: !winningBox && !losingBox && !draw
+    });
   };
 
   oTextClass = () => {
@@ -80,7 +82,7 @@ class Box extends Component {
       <div className={this.boxClass()} onClick={this.onClick}>
         <Fade
           {...{ timeout: { enter: this.fadeTime(), exit: 1000 } }}
-          in={box && box.value}
+          in={box && box.value ? true : false}
           mountOnEnter
           unmountOnExit
         >
