@@ -43,32 +43,6 @@ export function* calculateNextMove() {
   }
 }
 
-function* findWinner() {
-  let boxes = yield select(getBoxes);
-
-  const gameContext = yield select(getGameContext);
-
-  let winner = yield threeInARow(boxes, gameContext.usersTeam);
-
-  if (!winner) {
-    winner = yield threeInARow(boxes, gameContext.computersTeam);
-  }
-
-  return winner;
-}
-
-function* CheckDraw() {
-  const boxes = yield select(getBoxes);
-
-  let playersBoxes = yield currentPlayersBoxes(boxes, null);
-
-  if (playersBoxes.length === 0) {
-    return {
-      draw: true
-    };
-  }
-}
-
 export function* threeInARow(boxes, playerSymbol) {
   let playersBoxes = yield currentPlayersBoxes(boxes, playerSymbol);
 
@@ -86,7 +60,7 @@ export function* threeInARow(boxes, playerSymbol) {
   }
 }
 
-function* center(boxes, playerSymbol) {
+function center(boxes, playerSymbol) {
   const centerPosition = 5;
 
   if (boxes[centerPosition - 1].value === null) {
@@ -94,7 +68,7 @@ function* center(boxes, playerSymbol) {
   }
 }
 
-function* oppositeCorner(boxes, playerSymbol) {
+function oppositeCorner(boxes, playerSymbol) {
   for (const corner of Object.keys(opposingCorners)) {
     if (boxes[corner - 1].value === playerSymbol) {
       if (boxes[opposingCorners[corner] - 1].value === null) {
@@ -104,7 +78,7 @@ function* oppositeCorner(boxes, playerSymbol) {
   }
 }
 
-function* emptyCorner(boxes, playerSymbol) {
+function emptyCorner(boxes, playerSymbol) {
   for (const corner of Object.keys(opposingCorners)) {
     if (boxes[corner - 1].value === null) {
       return corner;
@@ -126,7 +100,7 @@ function* emptySide(boxes) {
   }
 }
 
-export function* currentPlayersBoxes(boxes, playerSymbol) {
+export function currentPlayersBoxes(boxes, playerSymbol) {
   let playersBoxes = [];
 
   for (const box in boxes) {

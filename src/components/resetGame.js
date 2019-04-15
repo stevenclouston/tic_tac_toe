@@ -3,7 +3,6 @@ import '../assets/css/board.css';
 import { connect } from 'react-redux';
 import Fade from '@material-ui/core/Fade';
 import Button from '@material-ui/core/Button';
-import { teams } from '../constants/teams';
 import { RESET_GAME } from '../constants/actionTypes';
 
 class ResetGame extends Component {

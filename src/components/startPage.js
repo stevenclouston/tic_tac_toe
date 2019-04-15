@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import '../assets/css/board.css';
 import { connect } from 'react-redux';
-import Box from './box';
-import { players } from '../constants/players';
 import { teams } from '../constants/teams';
 import { UPDATE_USERS_TEAM_ASYNC } from '../constants/actionTypes';
 import Button from '@material-ui/core/Button';

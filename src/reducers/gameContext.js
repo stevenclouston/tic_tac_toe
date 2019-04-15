@@ -3,7 +3,6 @@ import {
   UPDATE_USERS_TEAM,
   UPDATE_GAME_RESULT
 } from '../constants/actionTypes';
-import { players } from '../constants/players';
 import { teams } from '../constants/teams';
 
 const initialGameContext = {

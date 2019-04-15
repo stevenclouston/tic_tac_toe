@@ -14,7 +14,7 @@ import { CheckDraw, findWinner } from './results';
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
-function* randomCurrentTurn() {
+function randomCurrentTurn() {
   if (Math.random() > 0.5) {
     return players.COMPUTER;
   } else {
@@ -40,7 +40,7 @@ export function* updateBoxAsync(action) {
   gameContext = yield select(getGameContext);
 
   if (gameContext.currentTurn === players.COMPUTER) {
-    const nextPosition = yield calculateNextMove();
+    yield calculateNextMove();
 
     const winner = yield findWinner();
 
