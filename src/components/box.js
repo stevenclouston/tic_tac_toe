@@ -43,7 +43,7 @@ class Box extends Component {
           return "winner";
         }
 
-        return "looser";
+        return "loser";
       }
     };
 
@@ -51,14 +51,14 @@ class Box extends Component {
       const { draw } = this.props;
 
       if (draw) {
-        return "loosingBox";
+        return "losingBox";
       }
       if (boxStatus() === "winner") {
         return "winningBox";
       }
 
-      if (boxStatus() === "looser") {
-        return "loosingBox";
+      if (boxStatus() === "loser") {
+        return "losingBox";
       }
 
       return "box";
