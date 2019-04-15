@@ -3,6 +3,8 @@
 This application is an implementation of the game tic-tac-toe and provides a 'computer' opponent.
 The following algorithm has been implemented to determine the computer players next move.
 
+#### Algorithm
+
 Follow these steps in order to determine the next move: 
 
 * Win: If the player has two in a row, they can place a third to get three in a row.
@@ -17,17 +19,19 @@ Follow these steps in order to determine the next move:
 
 * Empty side: The player plays in a middle square on any of the 4 sides.
 
+### Play
+
 A working version of this project can be found here:
 
 https://sc-tic-tac-toe.herokuapp.com/
 
-To run this locally run: 
+### To run this locally run: 
 
 1. Clone this repo and run `yarn install`
 
 2. Run `yarn start` 
 
-To run tests:
+### To run tests:
 
 1. `yarn test`
 
@@ -36,17 +40,17 @@ Launches the test runner in the interactive watch mode.<br>
 Currently, tests are not complete but more tests will be added shortly.
 
 ### `Screens`
-####The start screen, where users select their team:
+#### The start screen, where users select their team:
 ![picture](readme_images/start.png)
 
-####The board:
+#### The board:
 ![picture](readme_images/board.png)
 
-####The losing screen:
+#### The losing screen:
 
 ![picture](readme_images/losing_screen.png)
 
-####The draw screen:
+#### The draw screen:
 
 ![picture](readme_images/draw.png)
 
