@@ -1,12 +1,10 @@
-import React, { Component } from "react";
-import "../assets/css/board.css";
-import { connect } from "react-redux";
-import Box from "./box";
-import { players } from "../constants/players";
-import { teams } from "../constants/teams";
-import { UPDATE_USERS_TEAM_ASYNC } from "../constants/actionTypes";
-import Button from "@material-ui/core/Button";
-import Fade from "@material-ui/core/Fade";
+import React, { Component } from 'react';
+import '../assets/css/board.css';
+import { connect } from 'react-redux';
+import { teams } from '../constants/teams';
+import { UPDATE_USERS_TEAM_ASYNC } from '../constants/actionTypes';
+import Button from '@material-ui/core/Button';
+import Fade from '@material-ui/core/Fade';
 
 class StartPage extends Component {
   selectXButtonClick = () => {
@@ -29,7 +27,7 @@ class StartPage extends Component {
           <Button
             variant="outlined"
             component="span"
-            className={"teamText"}
+            className={'teamText'}
             onClick={this.selectXButtonClick}
             style={{ margin: 10 }}
           >
@@ -38,7 +36,7 @@ class StartPage extends Component {
           <Button
             variant="outlined"
             component="span"
-            className={"teamText"}
+            className={'teamText'}
             onClick={this.selectOButtonClick}
             style={{ margin: 10 }}
           >

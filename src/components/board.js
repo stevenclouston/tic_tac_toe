@@ -1,10 +1,8 @@
-import React, { Component } from "react";
-import "../assets/css/board.css";
-import { connect } from "react-redux";
-import { players } from "../constants/players";
-import { teams } from "../constants/teams";
-import Fade from "@material-ui/core/Fade";
-import Box from "./box";
+import React, { Component } from 'react';
+import '../assets/css/board.css';
+import { connect } from 'react-redux';
+import Fade from '@material-ui/core/Fade';
+import Box from './box';
 
 export class Board extends Component {
   render() {
@@ -15,7 +13,7 @@ export class Board extends Component {
     const boardLayout = (
       <Fade
         {...{ timeout: { enter: 1000, exit: 0 } }}
-        in={gameContext.usersTeam}
+        in={gameContext.usersTeam ? true : false}
         mountOnEnter
         unmountOnExit
       >

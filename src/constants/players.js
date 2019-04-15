@@ -1,4 +1,4 @@
 export const players = {
-    USER: 'USER',
-    COMPUTER: 'COMPUTER',
-}
+  USER: 'USER',
+  COMPUTER: 'COMPUTER'
+};

@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import "../assets/css/board.css";
-import { connect } from "react-redux";
-import Fade from "@material-ui/core/Fade";
+import React, { Component } from 'react';
+import '../assets/css/board.css';
+import { connect } from 'react-redux';
+import Fade from '@material-ui/core/Fade';
 
 class Title extends Component {
   render() {

@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import "../assets/css/board.css";
-import { connect } from "react-redux";
-import Fade from "@material-ui/core/Fade";
+import React, { Component } from 'react';
+import '../assets/css/board.css';
+import { connect } from 'react-redux';
+import Fade from '@material-ui/core/Fade';
 
 class GameStatus extends Component {
   render() {
@@ -10,9 +10,9 @@ class GameStatus extends Component {
         return "It's a draw!";
       }
       if (this.props.winner === this.props.gameContext.usersTeam) {
-        return "You won!";
+        return 'You won!';
       } else {
-        return "Better luck next time!";
+        return 'Better luck next time!';
       }
     };
 
@@ -31,8 +31,8 @@ class GameStatus extends Component {
         mountOnEnter
         unmountOnExit
       >
-        <div style={{ position: "relative" }}>
-          <div style={{ position: "relative", width: "100%" }}>
+        <div style={{ position: 'relative' }}>
+          <div style={{ position: 'relative', width: '100%' }}>
             <h4>{status()}</h4>
           </div>
         </div>

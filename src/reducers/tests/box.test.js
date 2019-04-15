@@ -1,8 +1,8 @@
-import reducer from "../box";
-import { CREATE_BOX } from "../../constants/ActionTypes";
+import reducer from '../box';
+import { CREATE_BOX } from '../../constants/ActionTypes';
 
-describe("actions", () => {
-  it("should create a box", () => {
+describe('actions', () => {
+  it('should create a box', () => {
     const action = {
       type: CREATE_BOX,
       id: 1
